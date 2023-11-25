@@ -1,3 +1,5 @@
+//classe de conexao com o banco de dados
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
