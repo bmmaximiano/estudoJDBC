@@ -17,7 +17,7 @@ public class ProdutoDAO {
 		this.connection = connection;
 	}
 
-	public void salvarProduto(Produto produto) throws SQLException {
+	public void salvar(Produto produto) throws SQLException {
 
 			String sql = "insert into produto (nome, descricao) values (?,?)";
 

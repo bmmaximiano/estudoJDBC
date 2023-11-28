@@ -20,7 +20,7 @@ public class TestainsercaoComProduto {
 
 		try (Connection connection = connectionFactory.recuperarConexao();) {
 			ProdutoDAO persistenciaProduto = new ProdutoDAO(connection);
-			persistenciaProduto.salvarProduto(comoda);
+			persistenciaProduto.salvar(comoda);
 			
 			//Lista = persistenciaProduto.listar();
 
