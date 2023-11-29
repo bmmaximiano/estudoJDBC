@@ -5,11 +5,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
 import br.com.alura.jdbc.DAO.ProdutoDAO;
 import br.com.alura.jdbc.modelo.Produto;
 
-public class TestainsercaoComProduto {
+public class TestainsercaoEListagemComProduto {
 
 	public static void main(String[] args) {
 
@@ -19,10 +20,9 @@ public class TestainsercaoComProduto {
 		};
 
 		try (Connection connection = connectionFactory.recuperarConexao();) {
-			ProdutoDAO persistenciaProduto = new ProdutoDAO(connection);
-			persistenciaProduto.salvar(comoda);
-			
-			//Lista = persistenciaProduto.listar();
+			ProdutoDAO produtoDAO = new ProdutoDAO(connection);
+			produtoDAO.salvar(comoda);
+			List<Produto> lsitaDeProdutos = produtoDAO.listar(); 
 
 		} catch (SQLException e) {
 			System.out.println("erro ne conexão com banco de dados");
